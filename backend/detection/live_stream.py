@@ -17,3 +17,5 @@ while True:
 
 capture.release() #lets go of the camera for other possible applications that require it. Ex. OBS
 cv.destroyAllWindows()
+
+#hello world
