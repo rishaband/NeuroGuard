@@ -1,44 +1,68 @@
 /* src/Navbar.css */
 .navbar {
-    background-color: #333;
-    padding: 1rem;
-  }
-  
-  .navbar-container {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-  }
-  
-  .navbar-logo {
-    color: #fff;
-    font-size: 1.5rem;
-    text-decoration: none;
-  }
-  
-  .navbar-menu {
-    list-style: none;
-    display: flex;
-  }
-  
-  .navbar-item {
-    margin-left: 1rem;
-  }
-  
-  .navbar-link {
-    color: #fff;
-    text-decoration: none;
-  }
-  
-  .logout-button {
-    background: none;
-    border: none;
-    color: #fff;
-    cursor: pointer;
-    font-size: 1rem;
-  }
-  
-  .logout-button:hover {
-    text-decoration: underline;
-  }
-  
+  background-color: #88a0e1; /* Background color for the navbar */
+  padding: 1.5rem; /* Increase padding for a larger navbar */
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1); /* Subtle shadow effect */
+}
+
+.navbar-container {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.navbar-logo {
+  display: flex;
+  align-items: center;
+  text-decoration: none;
+}
+
+.logo-image {
+  width: 50px; /* Adjust the size of the logo */
+  height: 50px; /* Keep the logo square */
+  border-radius: 50%; /* Makes the logo round */
+  margin-right: 1rem; /* Space between the logo and text */
+  object-fit: cover; /* Ensures logo fits within the circle */
+}
+
+.logo-text {
+  color: #fff;
+  font-size: 2rem; /* Increase font size for a more impactful logo text */
+  font-weight: bold; /* Makes the text bold */
+}
+
+.navbar-menu {
+  list-style: none;
+  display: flex;
+}
+
+.navbar-item {
+  margin-left: 2rem; /* Increase space between menu items */
+}
+
+.navbar-link {
+  color: #fff;
+  text-decoration: none;
+  font-size: 1.5rem; /* Increase font size of the links for more impact */
+  font-weight: bold; /* Make the links bold */
+  transition: color 0.3s; /* Smooth color transition */
+}
+
+.navbar-link:hover {
+  color: #f0f0f0; /* Lighter color on hover */
+}
+
+.logout-button {
+  background: none;
+  border: none;
+  color: #fff;
+  cursor: pointer;
+  font-size: 1.5rem; /* Increase font size for logout button */
+  font-weight: bold; /* Make the button text bold */
+  transition: color 0.3s; /* Smooth color transition */
+}
+
+.logout-button:hover {
+  color: #f0f0f0; /* Lighter color on hover */
+  text-decoration: underline; /* Underline text on hover */
+}

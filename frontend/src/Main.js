@@ -1,7 +1,7 @@
 // src/Main.js
 import React, { useRef, useEffect } from 'react';
 import './Main.css'; // For styling
-import FixedButton from './FixedButton';
+// import FixedButton from './FixedButton';
 import VideoStream from './VideoStream';
 
 function Main() {
@@ -26,7 +26,7 @@ function Main() {
   return (
     <div className="main-container">
       <VideoStream />
-      <FixedButton />
+      {/* <FixedButton /> */}
     </div>
   );
 }

@@ -1,26 +1,26 @@
 // src/Navbar.js
 import React from 'react';
-import { Link, useNavigate } from 'react-router-dom';
+import { Link } from 'react-router-dom';
 import Cookies from 'js-cookie';
-import './Navbar.css'; // Import the CSS file
+import './Navbar.css';
+import logo from './NeuroGuard.jpg'; // Adjust this path if necessary
 
 function Navbar() {
-//   const navigate = useNavigate();
-
   const handleLogout = () => {
-    // Remove the authToken cookie
     Cookies.remove('authToken');
-    
-    // Redirect to the login page
     window.location.href = '/login';
   };
 
   return (
     <nav className="navbar">
       <div className="navbar-container">
+        {/* Logo and Name */}
         <Link to="/" className="navbar-logo">
-          NeuroGuard
+          <img src={logo} alt="NeuroGuard Logo" className="logo-image" />
+          <span className="logo-text">NeuroGuard</span>
         </Link>
+
+        {/* Centered Navbar Links */}
         <ul className="navbar-menu">
           <li className="navbar-item">
             <Link to="/main" className="navbar-link">Home</Link>
