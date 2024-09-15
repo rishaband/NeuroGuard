@@ -1,0 +1,39 @@
+/* src/TimeList.css */
+.time-list {
+    width: 100%;
+    max-width: 800px; /* Adjust the maximum width as needed */
+    margin: 0 auto;
+    border: 1px solid #ddd;
+    border-radius: 5px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    font-family: Arial, sans-serif;
+  }
+  
+  .list-header {
+    display: flex;
+    background-color: #f4f4f4;
+    font-weight: bold;
+    border-bottom: 1px solid #ddd;
+  }
+  
+  .header-item {
+    flex: 1;
+    padding: 10px;
+    text-align: center;
+  }
+  
+  .list-item {
+    display: flex;
+    border-bottom: 1px solid #ddd;
+  }
+  
+  .item-field {
+    flex: 1;
+    padding: 10px;
+    text-align: center;
+  }
+  
+  .list-item:last-child {
+    border-bottom: none;
+  }
+  

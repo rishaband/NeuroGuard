@@ -1,0 +1,21 @@
+
+.main-container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 20px;
+    background-color: #f0f0f0;
+  }
+  
+  .video-container {
+    border: 2px solid #ccc;
+    border-radius: 8px;
+    overflow: hidden;
+    background-color: #000;
+  }
+  
+  video {
+    display: block;
+    width: 100%;
+    height: auto;
+  }
