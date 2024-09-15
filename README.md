@@ -1,1 +1,1 @@
-# htn24-alzhimerdetection
+# htn24-alzheimerdetection
