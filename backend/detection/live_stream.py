@@ -2,6 +2,37 @@
 import mediapipe as mp
 import numpy as np
 import cv2 as cv
+from datetime import datetime
+import time
+import os
+
+# Define the global variable for tracking last execution time
+last_execution_time = 0
+delay = 30  # Delay in seconds
+filename = "fall.txt"
+
+def create_and_write_to_file(filename):
+    try:
+        # Get the current date and time
+        now = datetime.now()
+        
+        # Format the date and time
+        formatted_datetime = now.strftime("%Y-%m-%d %H:%M:%S")
+        
+        # Print the current directory and filename for debugging
+        print(f"Writing to file: {filename}")
+        print(f"Current working directory: {os.getcwd()}")
+        
+        # Create or open the file in append mode ('a' will create the file if it doesn't exist)
+        with open(filename, 'a') as file:
+            file.write(f"{formatted_datetime}\n")
+        print(f"Data successfully written to {filename}")
+    
+    except IOError as e:
+        print(f"IOError occurred: {e}")
+    except Exception as e:
+        print(f"An unexpected error occurred: {e}")
+
 
 mp_drawing = mp.solutions.drawing_utils  # Drawing utility for visualizing poses
 mp_pose = mp.solutions.pose  # Pose estimation model
@@ -88,7 +119,14 @@ with mp_pose.Pose(min_detection_confidence=0.4, min_tracking_confidence=0.4) as 
             else: # Falling Logic
                 status_text = "Falling"
                 color = (0, 0, 225)  # Red for falling
-                print("Fall detected! Features:", features)  # Print features only when falling
+                #print("Fall detected! Features:", features)  # Print features only when falling
+                
+                current_time = time.time()
+                if current_time - last_execution_time >= delay:
+                    # Call the function if 30 seconds have passed
+                    create_and_write_to_file("fall.txt")
+
+                    last_execution_time = current_time  # Update last execution time
 
             # Draw a rectangle around the body using head, hips, and ankles
             x_min = int(min(left_hip[0], right_hip[0], left_ankle[0], right_ankle[0], head[0]) * frame.shape[1])
@@ -116,6 +154,8 @@ with mp_pose.Pose(min_detection_confidence=0.4, min_tracking_confidence=0.4) as 
         # Break the loop on 'q' key press (live stream ends)
         if cv.waitKey(1) & 0xFF == ord('q'):
             break
+
+    
 
     capture.release()
     cv.destroyAllWindows()
