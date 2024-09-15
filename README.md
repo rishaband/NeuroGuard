@@ -1,1 +1,1 @@
-# HTN24-AlzheimerDetection
+# HTN24-AlzheimerFallDetection
