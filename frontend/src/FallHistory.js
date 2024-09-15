@@ -94,10 +94,13 @@
 
 import React from 'react';
 import './FallHistory.css'; // Import the CSS file for styling
+// import TestApi from './TestApi';
 
 function TimeList({ fallData }) {
   return (
+    
     <div className="time-list">
+        {/* <TestApi /> */}
       <div className="list-header">
         <div className="header-item">Time</div>
         <div className="header-item">Time on the Ground</div>

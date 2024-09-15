@@ -1,9 +1,11 @@
 from flask import Flask, render_template, Response
+from flask_cors import CORS
 import cv2
 import mediapipe as mp
 import numpy as np
 
 app = Flask(__name__)
+CORS(app)  # Add this line to enable CORS
 
 # MediaPipe initialization
 mp_drawing = mp.solutions.drawing_utils
@@ -69,6 +71,10 @@ def generate_frames():
 @app.route('/')
 def index():
     return render_template('index.html')
+
+@app.route('/test')
+def test():
+    return 'testing valid'
 
 @app.route('/video_feed')
 def video_feed():
