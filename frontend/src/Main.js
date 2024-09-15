@@ -2,6 +2,7 @@
 import React, { useRef, useEffect } from 'react';
 import './Main.css'; // For styling
 import FixedButton from './FixedButton';
+import VideoStream from './VideoStream';
 
 function Main() {
   const videoRef = useRef(null);
@@ -24,10 +25,7 @@ function Main() {
 
   return (
     <div className="main-container">
-      <h1>Live Webcam Feed</h1>
-      <div className="video-container">
-        <video ref={videoRef} width="640" height="480" autoPlay />
-      </div>
+      <VideoStream />
       <FixedButton />
     </div>
   );
