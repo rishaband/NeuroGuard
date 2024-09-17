@@ -10,7 +10,11 @@
 
 <h3>Pose Detection</h3>
 
+![Alt text](pose-detection.png)
 
+<p>Above is the repsentation of the MediaPipe Pose Detection algorithm nodes. The nodes we mainly used in our porject were from 23 - 28. This is because calculating the angle between the nodes 24 - 28 and 23 - 27 would be helpful in accurately determining whether the patient has fallen or not. The angle could be calculated by creating a new function and accesing the nodes x-y-z coordinates. Another method to detect a fall, which we ended up using, was the "average" node method. First, a bounding box was calculated by finding out the distances between important nodes. This was then followed by a quick check of threshold and patient height. The code for this can be found in the backend folder.</p>
+
+<p>Contributors are linked with the Repo. <br></br> Check out project demo here: https://devpost.com/software/neuroguard-1cbg2d?ref_content=user-portfolio&ref_feature=in_progress</p>
 
 
 
